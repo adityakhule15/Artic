@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">
+                        <h1 class="fw-bold">Total Posts</h1>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Post</th>
+                                    <th>Like</th>
+                                    <th>Disike</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for p in exicative %}
+                                    <tr>
+                                        <td>{{ p.post }} </td>
+                                        
+                                        <td><button class="like"><a href="http://127.0.0.1:8000/like/" + p.id.id="_blank">LIKE</a></button> {{p.id.like}} </td>
+                                        
+                                        <td><button class="dislike"><a href="http://127.0.0.1:8000/dislike/p.pk1?pk1="+p.pk1>DISLIKE</a></button> {{ p.id.dislike }} </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
